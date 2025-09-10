@@ -1,22 +1,38 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}About | Portfolio{% endblock %}
 
 {% block content %}
 <section class="about">
-  <h2>About Me</h2>
-  <p>
-    I’m a passionate and solution-driven <b>Flutter & Python/Django developer</b> 
-    pursuing B.Tech in Computer Science at <b>GGSIPU</b>.  
-    I thrive at the intersection of <b>technology, entrepreneurship, and innovation</b>.
-  </p>
+  <div class="container about-grid">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p class="lead">
+        I’m a passionate and solution-driven <strong>Flutter & Python/Django developer</strong> 
+        pursuing B.Tech in Computer Science at <strong>GGSIPU</strong>. I enjoy building clean, usable software and learning new tools that solve real problems.
+      </p>
 
-  <ul class="about-list">
-    <li>💼 Ex Intern @ <b>DRDO (SSPL)</b> & <b>Park It Up</b></li>
-    <li>💻 Skilled in <b>Flutter, Dart, Firebase, Python, Django</b></li>
-    <li>🚀 Co-Founder of <b>Startup Sphere</b></li>
-    <li>🏆 Hackathon participant & project builder</li>
-    <li>🎯 Goal: Build scalable, impactful mobile & web solutions</li>
-  </ul>
+      <ul class="about-list">
+        <li>💼 Ex Intern @ <strong>DRDO (SSPL)</strong> & <strong>Park It Up</strong></li>
+        <li>💻 Skilled in <strong>Flutter, Dart, Firebase, Python, Django</strong></li>
+        <li>🚀 Co-Founder of <strong>Startup Sphere</strong></li>
+        <li>🏆 Hackathon participant & project builder</li>
+        <li>🎯 Goal: Build scalable, impactful mobile & web solutions</li>
+      </ul>
+
+      <div class="center">
+        <a href="{% url 'projects' %}" class="btn">See Projects</a>
+      </div>
+    </div>
+
+    <aside class="about-side">
+      
+      <img src="{% static 'images/profile.jpg' %}" alt="Hitesh Tyagi" class="profile-img">
+      <div class="card small">
+        <h4>Quick facts</h4>
+        <p class="muted">I like building product-focused apps, competing in hackathons and learning ML/AI.</p>
+      </div>
+    </aside>
+  </div>
 </section>
-
 {% endblock %}

@@ -1,52 +1,78 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Home | Portfolio{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
 <section class="hero">
-  <div class="hero-text">
-    <h1>Hi, I’m <span class="highlight">Hitesh Tyagi</span></h1>
-    <p class="subtitle">Full-Stack Developer | Django & Flutter Enthusiast 🚀</p>
-    <a href="{% url 'projects' %}" class="btn">Explore My Work</a>
+  <div class="container hero-inner">
+    <div class="hero-left">
+      <h1>Hi, I’m <span class="highlight">Hitesh Tyagi</span></h1>
+      <p class="subtitle">Full-Stack Developer • Django & Flutter Enthusiast</p>
+      <p class="hero-desc">I build modern, scalable apps — web and mobile — with clean code and thoughtful UX.</p>
+      <div class="hero-actions">
+        <a href="{% url 'projects' %}" class="btn">Explore My Work</a>
+        <a href="{% url 'contact' %}" class="btn btn-ghost">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      
+      <img src="{% static 'images/profile.jpg' %}" alt="Hitesh Tyagi" class="profile-img">
+      <div class="hero-card">
+        <p class="muted">Current focus</p>
+        <h3>AI-driven mobile apps & full-stack systems</h3>
+        <p class="small">Django backends • Flutter frontends • Firebase & ML integration</p>
+      </div>
+    </div>
   </div>
 </section>
 
-
 <!-- About Preview -->
 <section class="about home-about">
-  <h2 class="section-title">About Me</h2>
-  <p>
-    Passionate developer with expertise in <strong>Django</strong>, <strong>Flutter</strong>, and 
-    creating modern full-stack solutions.  
-    I love building dynamic, scalable applications and exploring new tech.
-  </p>
-  <a href="{% url 'about' %}" class="btn">Read More</a>
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="lead">Passionate developer building modern full-stack solutions using Django and Flutter. I enjoy solving real problems with reliable, maintainable code.</p>
+    <div class="row">
+      <div>
+        <a href="{% url 'about' %}" class="btn btn-sm">Read More</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Projects Preview -->
 <section class="projects home-projects">
-  <h2 class="section-title">Featured Projects</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <h3>🚗 Park It Up</h3>
-      <p>A smart parking solution with real-time availability & payments.</p>
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="project-grid">
+      <article class="project-card">
+        <h3>🚗 Park It Up</h3>
+        <p class="muted">Smart parking with real-time availability & payments.</p>
+      </article>
+
+      <article class="project-card">
+        <h3>🌱 Metro Growr</h3>
+        <p class="muted">Social gardening platform with AI plant doctor.</p>
+      </article>
+
+      <article class="project-card">
+        <h3>🛡 Women Safety App</h3>
+        <p class="muted">Safety heatmaps, SOS and women-driven cab prototype.</p>
+      </article>
     </div>
-    <div class="project-card">
-      <h3>🌱 Metro Growr</h3>
-      <p>A social gardening platform with AI-powered plant doctor.</p>
-    </div>
-    <div class="project-card">
-      <h3>🛡 Women Safety App</h3>
-      <p>Safety heatmap, SOS, and women-driven cab service prototype.</p>
+    <div class="center">
+      <a href="{% url 'projects' %}" class="btn btn-outline">View All Projects</a>
     </div>
   </div>
-  <a href="{% url 'projects' %}" class="btn">View All Projects</a>
 </section>
 
 <!-- Contact Call to Action -->
-<section class="contact home-contact">
-  <h2>Let’s Connect</h2>
-  <p>Want to collaborate or just say hi? Reach out to me on socials 👇</p>
-  <a href="{% url 'contact' %}" class="btn">Contact Me</a>
+<section class="contact-cta">
+  <div class="container">
+    <h2>Let’s Connect</h2>
+    <p>Want to collaborate or just say hi? Reach out — I reply quickly.</p>
+    <a href="{% url 'contact' %}" class="btn">Contact Me</a>
+  </div>
 </section>
 {% endblock %}
